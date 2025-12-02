@@ -1,0 +1,19 @@
+{
+  "name": "student-management-system",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iZiaur/Student-Management-System.git"
+  },
+  "author": "Md Ziaur Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iZiaur/Student-Management-System/issues"
+  },
+  "homepage": "https://github.com/iZiaur/Student-Management-System#readme",
+  "description": ""
+}
