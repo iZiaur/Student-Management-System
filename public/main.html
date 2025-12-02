@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Analyzing System</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <center><img src="Logo VIT.png" height="100px" width="100px"><h1> Vellore Institute of Technology</h1>
+            <p>Absolute Grading System for analysing students performance</p></center>
+        </div>
+
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="switchTab('students')">Students</button>
+                <button class="tab-button" onclick="switchTab('analytics')">Analytics</button>
+                <button class="tab-button" onclick="switchTab('reports')">Reports</button>
+            </div>
+
+            <div id="students" class="tab-content active">
+                <div class="add-student-form">
+                    <h2>Enter Details for New Student</h2>
+                    <div class="form-grid">
+                        <input type="text" id="studentName" placeholder="Student Name" />
+                        <input type="text" id="rollNo" placeholder="Registration Number" />
+                        <input type="number" id="math" placeholder="Discrete Mathematics" min="0" max="100" />
+                        <input type="number" id="physics" placeholder="Eng Physics" min="0" max="100" />
+                        <input type="number" id="chemistry" placeholder="Scientific Chemistry" min="0" max="100" />
+                        <input type="number" id="english" placeholder="English" min="0" max="100" />
+                        <input type="number" id="cs" placeholder="Problem Solving" min="0" max="100" />
+                    </div>
+                    <button class="btn btn-primary" onclick="addStudent()">Add Student</button>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table id="studentsTable">
+                        <thead>
+                            <tr>
+                                <th>Registration No</th>
+                                <th>Name</th>
+                                <th>Discrete Mathematics</th>
+                                <th>Eng Physics</th>
+                                <th>Scientific Chemistry</th>
+                                <th>English</th>
+                                <th>Problem Solving</th>
+                                <th>Total</th>
+                                <th>Overall %</th>
+                                <th>Grade</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="analytics" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Students</h3>
+                        <div class="stat-value" id="totalStudents">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Class Average</h3>
+                        <div class="stat-value" id="classAverage">0%</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Top Performer</h3>
+                        <div class="stat-value" id="topPerformer">N/A</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Course wise Average Marks</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Grade Distribution</h3>
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+
+            <div id="reports" class="tab-content">
+                <h3 style="margin-bottom: 20px; color: #495057;">Course wise Statistics</h3>
+                <div class="subject-stats" id="subjectStats">
+                </div>
+
+                <div class="attention-section">
+                    <h4> Students Requiring Attention</h4>
+                    <div id="attentionList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Script.js"></script>
+</body>
+</html>
