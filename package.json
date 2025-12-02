@@ -1,9 +1,13 @@
 {
   "name": "student-management-system",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "api/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,5 @@
     "url": "https://github.com/iZiaur/Student-Management-System/issues"
   },
   "homepage": "https://github.com/iZiaur/Student-Management-System#readme",
-  "description": ""
+  "description": "Student Management System front-end deployment on Vercel"
 }
